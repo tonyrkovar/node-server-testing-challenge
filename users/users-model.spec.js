@@ -2,7 +2,7 @@ const db = require('../data/db-config')
 const { add } = require('./users-model.js')
 
 describe('add a hobit', () => {
-    describe('Should add a hobbit', () => {
+    describe('Should add a user', async () => {
         beforeEach(() => {
             return db('users').truncate()
         })

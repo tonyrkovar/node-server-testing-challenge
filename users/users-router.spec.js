@@ -1,11 +1,15 @@
 const request = require('supertest')
-const users = require('./users-router')
+const users = require('./users-router.js')
 
 describe('Should return users', () => {
-    it('Should return a list of users', () => {
-        return request(users).get('/users').then(res => {
-            expect(res.status).toBe(200)
-            expect(res.body.username).toBe('Donkey')
+    describe('/ get', () => {
+
+        it('Should return a list of users', async () => {
+            const ress = await request(users).get('/users')
+                .then(res => {
+                    expect(res.status).toBe(212)
+                    // expect(res.body.username).toBe('Shrek')
+                })
         })
     })
 })
